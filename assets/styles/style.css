@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: #40d6ea;
+}
+
+#form {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 180px 0;
+}
+
+#p1 {
+  margin-left: 26%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #030303;
+}
+
+.input {
+  width: 190px;
+}
+
+.select {
+  width: 200px;
+}
+
+.capa {
+  width: 500px;
+  padding: 10px;
+  height: 200px;
+  border: black solid;
+}
+
+.stat {
+  width: 400px;
+  padding: 5px;
+  height: 30px;
+  border: black solid;
+}
+
+.done {
+  width: 200px;
+  background-color: #ffaa00;
+  font-size: 15px;
+}
+
+.display {
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.max {
+  font-size: 20;
+  padding: 5px;
+}
+
+#refill {
+  color: white;
+  background: #ffaa00;
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+.add {
+  width: 200px;
+  background-color: #ffaa00;
+  padding: 5px;
+  font-size: 15px;
+}

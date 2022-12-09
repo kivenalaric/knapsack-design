@@ -8,6 +8,42 @@
     <title>Knapsak</title>
   </head>
   <body>
-    
+    <div id="form">
+        <p id="p1">
+          Please, input maximum capacity for Knapsack before you add items!
+        </p>
+        <label for="weight">Max-Weigth</label>
+        <input type="text" name="" id="weight" placeholder="max-weight" class="input"/>
+        <button id="done" onclick="done()" class="done">Set weight</button>
+        <label for="items">Items</label>
+        <select name="" id="select" class="select">
+        <option class='itemsadded' weight=10   value='Apple' id="apple">Apple</option>
+        <option class='itemsadded' weight=15   value='banana' id="banana">banana</option>
+        <option class='itemsadded' weight='35' value='Pear' id="pear">Pear</option>
+        <option class='itemsadded' weight='20' value='Cashew' id="cashew">Cashew</option>
+        <option class='itemsadded' weight='23' value='Guava' id="guava">Guava</option>
+        <option class='itemsadded' weight='24' value='Coconut' id="coconut">Coconut</option>
+        <option class='itemsadded' weight='18' value='Pineaple' id="pineaple">Pineaple</option>
+        <option class='itemsadded' weight='15' value='Cocoa' id="cocoa">Cocoa</option>
+        <option class='itemsadded' weight='17' value='Cassava' id="cassava">Cassava</option>
+        <option class='itemsadded' weight='25' value='Yam' id="yam">Yam</option>
+        <option class='itemsadded' weight='5'  value='Kolanut' id="kolanut">Kolanut</option>
+        <option class='itemsadded' weight='10' value='Carrot'id="carrot">Carrot</option>
+        <option class='itemsadded' weight='50' value='Stone'id="stone">Stone</option>
+        <option class='itemsadded' weight='33' value='Phone'id="phone">Phone</option>
+        <option class='itemsadded' weight='38' value='Bag' id="bag">Bag</option>
+        <option class='itemsadded' weight='27' value='Papaye' id="papaye">Papaye</option>
+        <option class='itemsadded' weight='19' value='Orange'id="orange">Orange</option>
+        <option class='itemsadded' weight='35' value='Waterlon'id="watermelon">Waterlon</option>
+        <option class='itemsadded' weight='29' value='Pawpaw'id="pawpaw">Pawpaw</option>
+        <option class='itemsadded' weight='1'  value='Cucumber' id="cucumber">Cucumber</option>
+        </select>
+        <button id="add" class="add">add to list</button>
+        <p class="display"></p>
+        <p class="capa" id="knapsack"></p>
+        <p class="max"></p>
+        <button id="refill" onclick="reset()">Refill</button>
+      </div>
+      <script src="assets/scripts/script.js"></script>
   </body>
 </html>
