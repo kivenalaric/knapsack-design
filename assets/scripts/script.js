@@ -1,16 +1,17 @@
-let maximumWeight = document.getElementById("weight");
-let itemLists = document.querySelector("#select");
-let doneBtn = document.querySelector("#done");
-let addedItems = document.getElementById("knapsack");
-let refillBtn = document.querySelector("#refill");
-let addButton = document.getElementById("add");
-let allItems = document.querySelector(".itemsadded");
-let display = document.querySelector(".display")
-let max = document.querySelector(".max")
+const maximumWeight = document.getElementById('weight');
+const itemLists = document.querySelector('#select');
+const doneBtn = document.querySelector('#done');
+const addedItems = document.getElementById('knapsack');
+const refillBtn = document.querySelector('#refill');
+const addButton = document.getElementById('add');
+const allItems = document.querySelector('.itemsadded');
+const display = document.querySelector('.display')
+const max = document.querySelector('.max')
+const alert = document.querySelector('.alert')
 let weights = "";
 let selectedObjects;
 
-let bagItems = [
+const bagItems = [
   { name: "Apple", weight: 10, value: 1 },
   { name: "banana", weight: 15, value: 2 },
   { name: "Pear", weight: 35, value: 3 },
@@ -50,7 +51,8 @@ function reset() {
 }
 addButton.addEventListener("click", () => {
   if (weights <= 0) {
-    alert("please input a weight");
+    alert.style.background = "white"
+    alert.innerHTML = ("please input a weight");
     return;
   } else {
     for (let i = 0; i < bagItems.length; i++) {
@@ -63,8 +65,8 @@ addButton.addEventListener("click", () => {
 
         if (knapsack.weight  <= knapsack.capacity) {
           display.style.background = "red"
-          display.innerHTML = "total weight:"+' '+ knapsack.weight +' '+ "total value:" +' '+ knapsack.value +' '+"capacity:" +' '+ knapsack.capacity
-           addedItems.innerHTML += "Item:" + ' ' + selectedObjects.name + " Weight:" + ' ' + selectedObjects.weight + " Value:" + ' ' + selectedObjects.value + ' '+ '<br>'+' '+'<br>';
+          display.innerHTML = "total weight:"+' '+ knapsack.weight +' '+ "total value:" +' '+ knapsack.value +' '+"capacity:" +' '+ knapsack.capacity +' '+" Remaining space:"+' '+ (knapsack.capacity - knapsack.weight);
+          addedItems.innerHTML += "Item:" + ' ' + selectedObjects.name + " Weight:" + ' ' + selectedObjects.weight + " Value:" + ' ' + selectedObjects.value + ' '+ '<br>'+' '+'<br>';
           console.log(selectedObjects);
         } else {
           addedItems.style.background = "red"
