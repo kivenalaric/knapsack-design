@@ -5,11 +5,11 @@ const addedItems = document.getElementById('knapsack')
 const refillBtn = document.querySelector('#refill')
 const addButton = document.getElementById('add')
 const allItems = document.querySelector('.itemsadded')
-const display = document.querySelector('.display');
-const max = document.querySelector('.max');
-const alert = document.querySelector('.alert');
-let weights = '';;
-let selectedObjects;;
+const display = document.querySelector('.display')
+const max = document.querySelector('.max')
+const alert = document.querySelector('.alert')
+let weights = ''
+let selectedObjects
 
 const bagItems = [
   { name: 'Apple', weight: 10, value: 1 },
@@ -32,39 +32,39 @@ const bagItems = [
   { name: 'Waterlon', weight: 9, value: 18 },
   { name: 'Pawpaw', weight: 10, value: 19 },
   { name: 'Cucumber', weight: 20, value: 20 }
-];;
+]
 
 const knapsack = {
   capacity: 0,
   weight: 0,
   value: 0,
   items: []
-};
+}
 
 function doneFxn () {
-  maximumWeight.disabled = true;;
-  weights = maximumWeight.value;;
+  maximumWeight.disabled = true
+  weights = maximumWeight.value
 }
 
 function resetFxn () {
-  window.location.reload();
+  window.location.reload()
 }
 
 addButton.addEventListener('click', () => {
   if (weights <= 0) {
-    alert.style.background = 'white';;
-    alert.innerHTML = 'please input a weight';;
+    alert.style.background = 'white'
+    alert.innerHTML = 'please input a weight'
   } else {
     for (let i = 0; i < bagItems.length; i++) {
       if (itemLists.value === bagItems[i].name) {
-        selectedObjects = bagItems[i];;
-        knapsack.capacity = weights;;
-        knapsack.weight += selectedObjects.weight;;
-        knapsack.value += selectedObjects.value;;
-        knapsack.items.push(selectedObjects);;
+        selectedObjects = bagItems[i]
+        knapsack.capacity = weights
+        knapsack.weight += selectedObjects.weight
+        knapsack.value += selectedObjects.value
+        knapsack.items.push(selectedObjects)
 
         if (knapsack.weight <= knapsack.capacity) {
-          display.style.background = 'red';
+          display.style.background = 'red'
           display.innerHTML =
             'total weight:' +
             ' ' +
@@ -80,7 +80,7 @@ addButton.addEventListener('click', () => {
             ' ' +
             ' Remaining space:' +
             ' ' +
-            (knapsack.capacity - knapsack.weight);
+            (knapsack.capacity - knapsack.weight)
           addedItems.innerHTML +=
             'Item:' +
             ' ' +
@@ -94,17 +94,17 @@ addButton.addEventListener('click', () => {
             ' ' +
             '<br>' +
             ' ' +
-            '<br>';
-          console.log(selectedObjects);
+            '<br>'
+          console.log(selectedObjects)
         } else {
-          addedItems.style.background = 'red';
-          max.style.background = 'red';
-          max.innerHTML = `maximum capacity has been exceeded`;
+          addedItems.style.background = 'red'
+          max.style.background = 'red'
+          max.innerHTML = 'maximum capacity has been exceeded'
         }
       }
     }
-    itemLists.remove(itemLists.selectedIndex);
-    console.log(`${knapsack.weight}`);
-    console.log(`${knapsack.capacity}`);
+    itemLists.remove(itemLists.selectedIndex)
+    console.log(`${knapsack.weight}`)
+    console.log(`${knapsack.capacity}`)
   }
-});
+})
