@@ -41,12 +41,12 @@ const knapsack = {
   items: []
 }
 
-function doneFxn () {
+function done () {
   maximumWeight.disabled = true
   weights = maximumWeight.value
 }
 
-function resetFxn () {
+function reset () {
   window.location.reload()
 }
 
