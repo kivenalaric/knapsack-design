@@ -1,13 +1,13 @@
 const maximumWeight = document.getElementById('weight')
 const itemLists = document.querySelector('#select')
-const doneBtn = document.querySelector('#done')
 const addedItems = document.getElementById('knapsack')
-const refillBtn = document.querySelector('#refill')
 const addButton = document.getElementById('add')
-const allItems = document.querySelector('.itemsadded')
+// const allItems = document.querySelector('.itemsadded')
 const display = document.querySelector('.display')
 const max = document.querySelector('.max')
 const alert = document.querySelector('.alert')
+const doneBtn = document.querySelector('#done')
+const refillBtn = document.querySelector('#refill')
 let weights = ''
 let selectedObjects
 
@@ -25,7 +25,7 @@ const bagItems = [
   { name: 'Kolanut', weight: 5, value: 11 },
   { name: 'Carrot', weight: 10, value: 12 },
   { name: 'Stone', weight: 50, value: 13 },
-  { name: 'Phone', weight: 33, value: 14 },
+  { name: 'Phone', weight: 13, value: 14 },
   { name: 'Bag', weight: 7, value: 15 },
   { name: 'Papaye', weight: 8, value: 16 },
   { name: 'Orange', weight: 20, value: 17 },
@@ -41,14 +41,14 @@ const knapsack = {
   items: []
 }
 
-function done () {
+doneBtn.addEventListener('click', () => {
   maximumWeight.disabled = true
   weights = maximumWeight.value
-}
+})
 
-function reset () {
+refillBtn.addEventListener('click', () => {
   window.location.reload()
-}
+})
 
 addButton.addEventListener('click', () => {
   if (weights <= 0) {
@@ -64,7 +64,7 @@ addButton.addEventListener('click', () => {
         knapsack.items.push(selectedObjects)
 
         if (knapsack.weight <= knapsack.capacity) {
-          display.style.background = 'red'
+          display.style.background = '#e38d24'
           display.innerHTML =
             'total weight:' +
             ' ' +
@@ -99,7 +99,7 @@ addButton.addEventListener('click', () => {
         } else {
           addedItems.style.background = 'red'
           max.style.background = 'red'
-          max.innerHTML = 'maximum capacity has been exceeded'
+          max.innerHTML = 'maximum capacity cannot be exceeded'
         }
       }
     }
